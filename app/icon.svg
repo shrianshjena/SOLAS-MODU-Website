@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Ink ground. Reads on both light and dark browser chrome. -->
+  <rect width="64" height="64" rx="12" fill="#081020"/>
+  <!--
+    Favicon v2 (client decision 2026-08-03): the S monogram centered inside a
+    sonar reticle ring, replacing the tall bare S. A vector composition,
+    never <text>, because fonts do not resolve in favicon rendering contexts.
+
+    Geometry (do not "simplify" these coordinates):
+    - Reticle ring r = 23 with four cardinal ticks (length 5, crossing
+      outward from the ring toward the tile edge), stroke 3 at 62% alpha so
+      the solid-white S owns the hierarchy by weight AND value.
+    - S: two 270-degree arcs of radius r = 7 on circles stacked at (32, 25)
+      and (32, 39), stroke 5.5. Start at the east point of the upper circle
+      (39, 25), counterclockwise (large-arc 1, sweep 0) to its south point
+      (32, 32) = the exact tile center, then clockwise (large-arc 1, sweep 1)
+      to the west point of the lower circle (25, 39).
+    - Endpoint spacing is exactly r * sqrt(2) = 9.899 for both arcs, so the
+      endpoint/radius pair is consistent and no renderer silently rescales.
+    - Everything is point- or axis-symmetric about (32, 32): geometric center
+      IS the optical center, no offset correction needed.
+    - Clearance: the stroked S corner sits ~19.4 from center vs the ring's
+      inner edge at 21.5. At 16 px the S stroke is ~1.4 px, the ring ~0.75 px.
+    - apple-icon.png derives from this SAME composition (full-bleed variant)
+      in scripts/build-assets.mjs buildIcons(); keep both copies in sync.
+  -->
+  <g stroke="#ffffff" stroke-width="3" opacity="0.62" fill="none">
+    <circle cx="32" cy="32" r="23"/>
+    <path d="M32 4v5M32 55v5M4 32h5M55 32h5"/>
+  </g>
+  <path d="M 39 25 A 7 7 0 1 0 32 32 A 7 7 0 1 1 25 39"
+        fill="none" stroke="#ffffff" stroke-width="5.5"/>
+</svg>

@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   SOLAS MODU : design tokens (shared family DNA with CARLTSOLAS,
+   redistributed per DESIGN_SYSTEM.md; polar/circular geometry family)
+   ============================================================ */
+:root {
+  --ink: #081020; /* base dark ground */
+  --ink-2: #0a1a2c; /* elevated dark surface */
+  --navy: #082030; /* headings on light; monogram tiles */
+  --slate: #304860; /* body copy on light */
+  --surface: #f0f0f8; /* light section background */
+  --accent: #1d5bd8; /* PRIMARY, electric blue: numbers, key-lines, data */
+  --steel: #78b0f0; /* "ENGINEERING" wordmark; dark-slide labels */
+  --flare: #e8622c; /* SECONDARY, burnt orange: waterline, rare highlight */
+  --meta: #8090a0; /* mono eyebrows, footers, captions */
+
+  /* RGB triplets so Tailwind opacity modifiers (bg-ink/85 etc.) compose;
+     keep in lockstep with the hex tokens above */
+  --ink-rgb: 8 16 32;
+  --ink-2-rgb: 10 26 44;
+  --navy-rgb: 8 32 48;
+  --slate-rgb: 48 72 96;
+  --surface-rgb: 240 240 248;
+  --accent-rgb: 29 91 216;
+  --steel-rgb: 120 176 240;
+  --flare-rgb: 232 98 44;
+  --meta-rgb: 128 144 160;
+
+  --grid-line: rgba(120, 176, 240, 0.07);
+  --hairline: rgba(120, 176, 240, 0.16);
+  --hairline-strong: rgba(120, 176, 240, 0.28);
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.86, 0, 0.07, 1);
+
+  --shell: 1440px;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* ---- scroll lock while the preloader is up (SSR-safe, set on <html>) ---- */
+html.is-loading,
+html.is-loading body {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+/* ---- selection / focus ---- */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+:where(a, button, [tabindex], input, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+.u-shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.u-grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.u-hairline {
+  border-color: var(--hairline);
+}
+
+/* clip-mask used for line-reveal text */
+.u-clip {
+  overflow: hidden;
+  display: block;
+}
+
+/* ---- photographic grades (DESIGN_SYSTEM.md section 8) ---- */
+.u-media {
+  position: relative;
+  overflow: hidden;
+}
+.u-grade-survey img {
+  filter: saturate(0.8) contrast(1.06) brightness(0.96);
+}
+.u-grade-survey::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    160deg,
+    rgba(8, 16, 32, 0.55),
+    rgba(8, 32, 48, 0.15) 55%,
+    rgba(29, 91, 216, 0.12)
+  );
+}
+/* plate: colour at rest; hover/focus applies the archival duotone */
+.u-grade-plate img {
+  filter: saturate(0.8) contrast(1.06) brightness(0.96);
+  transition: filter 0.4s var(--ease-expo);
+}
+.u-grade-plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(8, 16, 32, 0.5), rgba(120, 176, 240, 0.2));
+  mix-blend-mode: color;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-expo);
+}
+
+/* archive: duotone at rest, colour on hover/focus; reserved for /gallery */
+.u-grade-archive img {
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+  transition: filter 0.4s var(--ease-expo);
+}
+.u-grade-archive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(8, 16, 32, 0.5), rgba(120, 176, 240, 0.2));
+  mix-blend-mode: color;
+  transition: opacity 0.4s var(--ease-expo);
+}
+@media (hover: hover) {
+  .u-grade-plate:hover img {
+    filter: grayscale(1) contrast(1.05) brightness(0.9);
+  }
+  .u-grade-plate:hover::after {
+    opacity: 1;
+  }
+  .u-grade-archive:hover img {
+    filter: saturate(0.8) contrast(1.06) brightness(0.96);
+  }
+  .u-grade-archive:hover::after {
+    opacity: 0;
+  }
+}
+.u-grade-plate:focus-within img {
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+}
+.u-grade-plate:focus-within::after {
+  opacity: 1;
+}
+.u-grade-archive:focus-within img {
+  filter: saturate(0.8) contrast(1.06) brightness(0.96);
+}
+.u-grade-archive:focus-within::after {
+  opacity: 0;
+}
+
+/* ---- hero + nav text lift over live video ----
+   keep offsets tight: TextReveal's per-word overflow masks clip wide glows.
+   hero-halo is a LIGHT halo under the dark hero copy; nav-shadow remains the
+   dark shadow for white nav text on subpage heroes */
+.u-text-hero-halo {
+  text-shadow: 0 1px 2px rgba(240, 240, 248, 0.55);
+}
+.u-text-nav-shadow {
+  text-shadow: 0 1px 3px rgba(8, 16, 32, 0.55);
+}
+
+/* ---- custom cursor: hide the native cursor only on fine pointers ---- */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ---- chart border: nautical graticule strip on dark section tops (D2) ---- */
+.u-chart-border {
+  position: relative;
+}
+.u-chart-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to right,
+    var(--hairline-strong) 0 24px,
+    transparent 24px 48px
+  );
+}
+.u-chart-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: var(--hairline);
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes sweep-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Marquee loop: pure CSS, compositor-driven. No JS animation engine may ever
+   target the track; a GSAP tween on the same element carried overwrite: true
+   and killed the loop on the user's first scroll tick, which shipped a frozen
+   carousel through three production rounds. The pause states below are the
+   ONLY way the loop stops. */
+.u-marquee-track {
+  animation: marquee-x var(--marquee-duration, 32s) linear infinite;
+  will-change: transform;
+}
+.u-marquee:hover .u-marquee-track,
+.u-marquee:focus-within .u-marquee-track,
+.u-marquee-paused .u-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes ping-ring {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  40% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  60% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

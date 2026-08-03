@@ -1,0 +1,216 @@
+/**
+ * Content for the published scope-of-work summaries rendered by
+ * scripts/build-docs.mjs. These replace the confidential commercial
+ * contracts removed from the certificates page (client decision 2026-07-30).
+ *
+ * Editorial rules: registry voice, past tense for completed work; NEVER
+ * contract values, bank/financial details, GEM references, vessel or rig
+ * names, or personal names; satisfaction language only where the underlying
+ * completion certificate actually says it; no em dashes; "SOLAS MODU" is
+ * always two words. Facts trace to the completion records on file (see the
+ * internal capability record).
+ */
+
+export const scopeDocs = [
+  {
+    slug: "sow-ongc-vessels-piping",
+    docRef: "SOW-ONGC-01",
+    client: "Oil and Natural Gas Corporation Ltd",
+    title: "NDT Services for Process and Unmanned Platform Vessels and Piping",
+    period: "2024-2029",
+    status: "ACTIVE",
+    discipline: "Advanced NDT",
+    location: "ONGC offshore assets, Western Offshore, Arabian Sea",
+    scopeParagraphs: [
+      "Under an offshore services contract awarded in 2024, SOLAS MODU Marine Services carries out non-destructive testing of vessels and piping on process and unmanned platforms operated by Oil and Natural Gas Corporation Ltd across its Western Offshore assets in the Arabian Sea. The contract remains in force through 14 April 2029 and is active at the date of publication.",
+      "Inspection campaigns are executed by qualified NDT technicians mobilized to the offshore installations in coordination with platform operations. Vessels and piping systems are examined to the client's inspection requirements, and findings are documented and reported to ONGC to support asset integrity assessment and maintenance planning across the platform inventory.",
+    ],
+    services: [
+      "NDT of platform vessels",
+      "NDT of process and unmanned platform piping",
+      "Offshore inspection campaign execution",
+      "Qualified NDT technician mobilization",
+      "Integrity reporting and documentation",
+    ],
+    certTitle: "Scope of Work, NDT for Vessels & Piping",
+  },
+  {
+    slug: "sow-ongc-drilling-rigs",
+    docRef: "SOW-ONGC-02",
+    client: "Oil and Natural Gas Corporation Ltd",
+    title: "Rate Contract for NDT Services on Offshore Drilling Rigs",
+    period: "2023-2026",
+    status: "ACTIVE",
+    discipline: "Advanced NDT",
+    location: "ONGC offshore drilling fleet, Indian waters",
+    scopeParagraphs: [
+      "SOLAS MODU Marine Services holds a rate contract with Oil and Natural Gas Corporation Ltd for non-destructive testing services on eight ONGC owned offshore drilling rigs operating in Indian waters. Awarded in 2023, the contract remains in force through 27 September 2026 and covers the corporation's owned drilling fleet.",
+      "Services are called off against agreed schedule rates as inspection requirements arise on each unit. NDT crews mobilize offshore to perform the specified examinations, and results are documented and reported to ONGC for integrity and maintenance follow up. The arrangement provides the drilling fleet with a standing inspection resource for the duration of the contract.",
+    ],
+    services: [
+      "Rate based NDT call-off services",
+      "Coverage of eight ONGC owned drilling rigs",
+      "Offshore crew mobilization",
+      "Specified NDT examinations on demand",
+      "Inspection reporting to ONGC",
+    ],
+    certTitle: "Scope of Work, NDT Rate Contract, Drilling Rigs",
+  },
+  {
+    slug: "sow-ongc-cranes-mh",
+    docRef: "SOW-ONGC-03",
+    client: "Oil and Natural Gas Corporation Ltd",
+    title: "Inspection and NDT of Cranes, Mumbai High Asset",
+    period: "2022-2024",
+    status: "COMPLETED",
+    discipline: "Crane Inspection & NDT",
+    location: "Mumbai High Asset, Arabian Sea",
+    scopeParagraphs: [
+      "Between 2022 and 2024, SOLAS MODU Marine Services carried out inspection and non-destructive testing of cranes for Oil and Natural Gas Corporation Ltd across the Mumbai High (MH) Asset in the Arabian Sea. The scope covered crane inspection together with the associated NDT examinations on the asset's offshore installations.",
+      "Inspection teams mobilized to the asset to examine the cranes and applied NDT methods to detect service induced degradation. Findings were recorded and reported to ONGC to support continued safe crane operation and maintenance planning across the asset. The contract concluded in 2024 with the scope completed.",
+    ],
+    services: [
+      "Offshore crane inspection",
+      "NDT of crane structures and components",
+      "Mumbai High Asset campaign coverage",
+      "Defect recording and evaluation",
+      "Inspection reporting to ONGC",
+    ],
+    certTitle: "Scope of Work, Crane Inspection & NDT",
+  },
+  {
+    slug: "sow-ongc-lrut-pipelines",
+    docRef: "SOW-ONGC-04",
+    client: "Oil and Natural Gas Corporation Ltd",
+    title: "Health Assessment of Non-Piggable Overhead Pipelines Using LRUT",
+    period: "2024",
+    status: "COMPLETED",
+    discipline: "LRUT / Pipeline Integrity",
+    location: "ONGC facilities, India",
+    scopeParagraphs: [
+      "In 2024, Oil and Natural Gas Corporation Ltd engaged SOLAS MODU Marine Services to carry out a health assessment of non-piggable overhead pipelines at ONGC facilities in India. As the lines could not be inspected by conventional in-line tools, long range ultrasonic testing (LRUT) was applied as the screening method.",
+      "Guided wave equipment screened long runs of pipeline from a limited number of access points, locating indications that warranted follow up evaluation. The results were consolidated into a health assessment of the surveyed lines and reported to ONGC. The work was completed in 2024.",
+    ],
+    services: [
+      "Long range ultrasonic testing (LRUT)",
+      "Screening of non-piggable pipelines",
+      "Overhead pipeline health assessment",
+      "Identification of areas for follow up",
+      "Assessment reporting to ONGC",
+    ],
+    certTitle: "Scope of Work, LRUT Pipeline Health Assessment",
+  },
+  {
+    slug: "sow-ongc-uran",
+    docRef: "SOW-ONGC-05",
+    client: "Oil and Natural Gas Corporation Ltd, Uran Plant",
+    title: "Advanced NDT of Overhead Pipelines and Supports, Uran Plant",
+    period: "2022",
+    status: "COMPLETED",
+    discipline: "Advanced NDT (LRUT, PAUT, PEC)",
+    location: "Uran, Maharashtra",
+    scopeParagraphs: [
+      "At the Oil and Natural Gas Corporation Ltd plant at Uran, Maharashtra, SOLAS MODU Marine Services performed advanced non-destructive testing of overhead pipelines and their supports. The contracted scope combined long range ultrasonic testing (LRUT), phased array ultrasonic testing (PAUT), automated PAUT and pulsed eddy current (PEC) examination across the specified lines.",
+      "The techniques were deployed in combination, pairing long range screening of the pipeline runs with detailed follow up examination of the lines and their supports. Field work, evaluation and reporting were carried out to the client's requirements, and results were handed over to ONGC for integrity and maintenance action.",
+      "ONGC issued a Job Completion Certificate for the project dated 23 December 2022, recording that the contracted work was successfully completed and carried out satisfactorily. The engagement closed in 2022 and is held on file as a completed advanced NDT reference for plant pipework.",
+    ],
+    services: [
+      "Long range ultrasonic testing (LRUT)",
+      "Phased array ultrasonic testing (PAUT)",
+      "Automated PAUT scanning",
+      "Pulsed eddy current (PEC) examination",
+      "Overhead pipeline and support coverage",
+      "Job completion reporting",
+    ],
+    certTitle: "Scope of Work, Advanced NDT, Uran Plant",
+  },
+  {
+    slug: "sow-ongc-neelam-lifeboats",
+    docRef: "SOW-ONGC-06",
+    client: "Oil and Natural Gas Corporation Ltd, Bassein & Satellite Asset",
+    title: "Supply, Installation and Commissioning of Lifeboats, Neelam Platform",
+    period: "2015-2021",
+    status: "COMPLETED",
+    discipline: "LSA / Survival Systems",
+    location: "Neelam Platform, Mumbai High, Arabian Sea",
+    scopeParagraphs: [
+      "For the Oil and Natural Gas Corporation Ltd Bassein & Satellite Asset, SOLAS MODU Marine Services supplied, installed and commissioned two lifeboats on the Neelam Platform in the Mumbai High field of the Arabian Sea. The scope covered the full delivery cycle, from supply of the boats through installation and commissioning on the platform.",
+      "The installation was originally executed in 2015, with the boats fitted and commissioned in position, and the project was formally closed in 2021 with the work complete. The installed boats form part of the platform's life saving appliance arrangement, and the engagement is recorded as a completed survival systems project.",
+    ],
+    services: [
+      "Supply of two lifeboats",
+      "Installation on a fixed offshore platform",
+      "Commissioning on the Neelam Platform",
+      "Survival systems project delivery",
+      "Project closure documentation",
+    ],
+    certTitle: "Scope of Work, Neelam Platform Lifeboats",
+  },
+  {
+    slug: "sow-iocl-lrut-tuticorin",
+    docRef: "SOW-IOCL-01",
+    client: "Indian Oil Corporation Ltd",
+    title: "LRUT Thickness Testing of Product Pipelines, Tuticorin Terminal",
+    period: "2020",
+    status: "COMPLETED",
+    discipline: "LRUT / Pipeline Integrity",
+    location: "Tuticorin (Thoothukudi), Tamil Nadu",
+    scopeParagraphs: [
+      "Indian Oil Corporation Ltd engaged SOLAS MODU Marine Services to carry out thickness testing of product pipelines by long range ultrasonic testing (LRUT) at its Tuticorin Terminal in Thoothukudi, Tamil Nadu. The scope covered the naphtha, furnace oil (FO) and HFHSD product lines serving the terminal.",
+      "LRUT screening was applied along the product lines to assess wall thickness condition, with results reported to the terminal for evaluation and follow up. The Work Completion Certificate dated 30 December 2020 records that the work was completed satisfactorily and that delivery ran ahead of schedule. The project closed in 2020.",
+    ],
+    services: [
+      "LRUT thickness testing",
+      "Naphtha pipeline screening",
+      "Furnace oil (FO) pipeline screening",
+      "HFHSD pipeline screening",
+      "Wall thickness condition assessment",
+      "Condition reporting to the terminal",
+    ],
+    certTitle: "Scope of Work, LRUT, Tuticorin Terminal",
+  },
+  {
+    slug: "sow-jagson-flag-state",
+    docRef: "SOW-JAG-01",
+    client: "Jagson International Ltd",
+    title: "Fire Safety, LSA, FFA and Crane Servicing with Flag State Inspection Attendance",
+    period: "2022",
+    status: "COMPLETED",
+    discipline: "FSI Attendance / LSA / FFA",
+    location: "Indian offshore waters",
+    scopeParagraphs: [
+      "Under a 2022 work order from Jagson International Ltd, SOLAS MODU Marine Services provided fire safety services on an offshore drilling unit operating in Indian offshore waters. The scope combined annual servicing of life saving appliances (LSA) and fire fighting appliances (FFA) with crane servicing on board the unit.",
+      "In addition to the servicing scope, the firm attended the unit's flag state inspection under the same work order. Jagson International issued a Certificate of Satisfactory Services for the engagement, which is held on file, and the work was completed in 2022.",
+    ],
+    services: [
+      "Fire safety services offshore",
+      "Annual LSA servicing",
+      "Annual FFA servicing",
+      "Crane servicing",
+      "Flag state inspection attendance",
+    ],
+    certTitle: "Scope of Work, FSI Attendance & Safety Servicing",
+  },
+  {
+    slug: "sow-pipavav-rig-ndt",
+    docRef: "SOW-PPV-01",
+    client: "Pipavav Defence and Offshore Engineering Company Ltd",
+    title: "NDT and Thickness Measurement on an Offshore Drilling Rig",
+    period: "2014",
+    status: "COMPLETED",
+    discipline: "NDT / Thickness Measurement",
+    location: "Pipavav, Gujarat",
+    scopeParagraphs: [
+      "SOLAS MODU Marine Services carried out non-destructive testing and thickness measurement on an offshore drilling rig for Pipavav Defence and Offshore Engineering Company Ltd (PDOECL) at Pipavav, Gujarat. The scope covered the NDT examinations and thickness measurement specified by the client for the unit.",
+      "Examinations were performed to the client's requirements, with results recorded and reported for evaluation. The Work Completion Certificate issued for the project states that the work was performed to the satisfaction of PDOECL requirements. The engagement was completed in 2014 and stands on file as a completed rig inspection reference.",
+    ],
+    services: [
+      "NDT of an offshore drilling rig",
+      "Thickness measurement surveys",
+      "Examination to client requirements",
+      "Results recording and evaluation",
+      "Work completion reporting",
+    ],
+    certTitle: "Scope of Work, Drilling Rig NDT & Gauging",
+  },
+];

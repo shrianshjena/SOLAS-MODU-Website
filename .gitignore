@@ -1,0 +1,42 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env
+.env*.local
+
+# deploy
+.vercel
+
+# large source assets (used to derive web assets; not part of the build)
+/SOLAS MODU_Hero Animation.mp4
+/SOLAS MODU Hero Animation 2.0.mp4
+/.remember/
+
+# verification artifacts
+/.verify-shots/
+
+# internal development documentation (public repo excludes these; they live
+# on disk and in the local-only dev-history branch)
+/CLAUDE.md
+/MEMORY.md
+/CHANGELOG.md
+/DESIGN_SYSTEM.md
+/SECURITY.md
+/docs/
